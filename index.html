@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>Vishal Mehta - UX Design Leader | Product Strategy & AI Workflows</title>
+    <meta name="title" content="Vishal Mehta - UX Design Leader | Product Strategy & AI Workflows" />
+    <meta name="description" content="UX design leader specializing in product strategy, design systems, and AI-enhanced workflows. Building elegant, user-centered experiences that scale." />
+    <meta name="keywords" content="UX Design, Product Strategy, Design Systems, AI Design, User Experience, Design Leadership" />
+    <meta name="author" content="Vishal Mehta" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://your-domain.com/" />
+    <meta property="og:title" content="Vishal Mehta - UX Design Leader" />
+    <meta property="og:description" content="Designing clarity, experiences, and intelligent workflows. UX leader specializing in product strategy and AI-enhanced design." />
+    <meta property="og:image" content="https://your-domain.com/preview.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://your-domain.com/" />
+    <meta property="twitter:title" content="Vishal Mehta - UX Design Leader" />
+    <meta property="twitter:description" content="Designing clarity, experiences, and intelligent workflows. UX leader specializing in product strategy and AI-enhanced design." />
+    <meta property="twitter:image" content="https://your-domain.com/preview.jpg" />
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#ffffff" />
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
+    
+    <!-- Loading Styles -->
+    <style>
+      /* Prevent flash of unstyled content */
+      html {
+        background-color: #ffffff;
+      }
+      
+      /* Loading animation */
+      .loading-container {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #ffffff;
+        z-index: 9999;
+      }
+      
+      .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid #f3f3f5;
+        border-top-color: #030213;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+      
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      
+      /* Hide loading when app is ready */
+      .app-ready .loading-container {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    
+    <!-- Loading indicator -->
+    <div class="loading-container">
+      <div class="loading-spinner"></div>
+    </div>
+    
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Mark app as ready after load -->
+    <script>
+      window.addEventListener('load', () => {
+        document.documentElement.classList.add('app-ready');
+      });
+    </script>
+  </body>
+</html>
