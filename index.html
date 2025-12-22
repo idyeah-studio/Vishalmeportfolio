@@ -14,17 +14,17 @@
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://your-domain.com/" />
+    <meta property="og:url" content="https://idyeah-studio.github.io/Vishalmeportfolio/" />
     <meta property="og:title" content="Vishal Mehta - UX Design Leader" />
     <meta property="og:description" content="Designing clarity, experiences, and intelligent workflows. UX leader specializing in product strategy and AI-enhanced design." />
-    <meta property="og:image" content="https://your-domain.com/preview.jpg" />
+    <meta property="og:image" content="https://idyeah-studio.github.io/Vishalmeportfolio/preview.jpg" />
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://your-domain.com/" />
+    <meta property="twitter:url" content="https://idyeah-studio.github.io/Vishalmeportfolio/" />
     <meta property="twitter:title" content="Vishal Mehta - UX Design Leader" />
     <meta property="twitter:description" content="Designing clarity, experiences, and intelligent workflows. UX leader specializing in product strategy and AI-enhanced design." />
-    <meta property="twitter:image" content="https://your-domain.com/preview.jpg" />
+    <meta property="twitter:image" content="https://idyeah-studio.github.io/Vishalmeportfolio/preview.jpg" />
     
     <!-- Theme Color -->
     <meta name="theme-color" content="#ffffff" />
@@ -74,6 +74,16 @@
         transition: opacity 0.3s ease;
       }
     </style>
+    <script>
+      // Handle redirect from 404.html for GitHub Pages
+      (function() {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect != location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
