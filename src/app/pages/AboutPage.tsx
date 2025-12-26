@@ -224,13 +224,12 @@ export function AboutPage() {
               <div className="flex flex-wrap gap-2">
                 {[
                   'AI-Driven Design',
-                  'Generative AI (ChatGPT, Midjourney)',
-                  'Machine Learning UX',
+                  'ChatGPT',
+                  'Claude',
+                  'Gemini',
                   'AI Automation',
                   'Figma/FigJam',
-                  'Design Tokens',
                   'React/TypeScript',
-                  'SAP/ERP UX',
                   'Prototyping',
                   'User Testing Tools'
                 ].map((skill) => (
