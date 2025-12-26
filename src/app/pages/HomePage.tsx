@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles, Lock } from 'lucide-react';
 import { caseStudies } from '../data/caseStudies';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
@@ -131,16 +131,25 @@ export function HomePage() {
                 >
                   <Link to={`/work/${study.id}`} className="h-full">
                     <motion.div
-                      className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-gray-300 transition-colors group h-full flex flex-col"
+                      className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-gray-300 transition-colors group h-full flex flex-col relative"
                       whileHover={{ y: -4 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="aspect-[4/3] bg-gray-100 overflow-hidden flex-shrink-0">
+                      <div className="aspect-[4/3] bg-gray-100 overflow-hidden flex-shrink-0 relative">
                         <ImageWithFallback
                           src={study.thumbnail}
                           alt={study.title}
-                          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                          className="w-full h-full object-cover object-top blur-sm"
                         />
+                        {/* Password Lock Overlay */}
+                        <div className="absolute inset-0 bg-gray-900/60 flex items-center justify-center">
+                          <div className="text-center">
+                            <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center mx-auto mb-2">
+                              <Lock className="w-6 h-6 text-gray-900" />
+                            </div>
+                            <p className="text-white text-sm font-medium">Password Protected</p>
+                          </div>
+                        </div>
                       </div>
                       <div className="p-6 flex-grow flex flex-col">
                         <h3 className="text-xl mb-2 text-gray-900 group-hover:text-gray-600 transition-colors">
