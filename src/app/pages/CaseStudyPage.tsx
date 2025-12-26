@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, Sparkles } from 'lucide-react';
 import { caseStudies } from '../data/caseStudies';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+import { PasswordProtection } from '../components/PasswordProtection';
 
 export function CaseStudyPage() {
   const { id } = useParams<{ id: string }>();
@@ -22,6 +23,7 @@ export function CaseStudyPage() {
   }
 
   return (
+    <PasswordProtection>
     <div className="pt-32 pb-24 min-h-screen">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Back Button */}
@@ -202,6 +204,7 @@ export function CaseStudyPage() {
         </motion.div>
       </div>
     </div>
+    </PasswordProtection>
   );
 }
 

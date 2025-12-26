@@ -2,9 +2,11 @@ import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { caseStudies } from '../data/caseStudies';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+import { PasswordProtection } from '../components/PasswordProtection';
 
 export function WorkPage() {
   return (
+    <PasswordProtection>
     <div className="pt-32 pb-24 min-h-screen">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header */}
@@ -81,5 +83,6 @@ export function WorkPage() {
         </div>
       </div>
     </div>
+    </PasswordProtection>
   );
 }
