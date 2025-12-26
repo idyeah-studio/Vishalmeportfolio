@@ -112,7 +112,7 @@ export function AboutPage() {
               className="relative rounded-2xl overflow-hidden shadow-2xl"
             >
               <ImageWithFallback
-                src="/Vishalmeportfolio/images/profile.jpg"
+                src="/images/profile.jpg"
                 alt="Vishal Mehta"
                 className="w-full aspect-[3/4] object-cover"
               />
