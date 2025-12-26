@@ -1,13 +1,15 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import { caseStudies } from '../data/caseStudies';
+import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
 export function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 px-6 lg:px-12 min-h-screen flex items-center">
-        <div className="max-w-7xl mx-auto w-full">
+      <section className="relative pt-32 pb-24 min-h-screen flex items-center">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full">
           <div className="max-w-4xl">
             {/* Animated Badge */}
             <motion.div
@@ -25,17 +27,9 @@ export function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="mb-6"
+              className="mb-6 text-gray-900"
             >
-              <span className="block text-gray-900 mb-2">
-                Designing clarity,
-              </span>
-              <span className="block text-gray-900 mb-2">
-                experiences, and
-              </span>
-              <span className="block text-gray-900">
-                intelligent workflows.
-              </span>
+              Designing clarity, experiences, and intelligent workflows.
             </motion.h1>
 
             {/* Subheadline */}
@@ -102,8 +96,8 @@ export function HomePage() {
       </section>
 
       {/* Featured Work Preview */}
-      <section className="px-6 lg:px-12 py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -127,35 +121,39 @@ export function HomePage() {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {['AI Design Assistant', 'Enterprise Design System', 'Mobile Banking'].map(
-                (title, index) => (
-                  <motion.div
-                    key={title}
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: '-50px' }}
-                    transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                  >
-                    <Link to="/work">
-                      <motion.div
-                        className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-gray-300 transition-colors group"
-                        whileHover={{ y: -4 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <div className="aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200" />
-                        <div className="p-6">
-                          <h3 className="text-xl mb-2 text-gray-900 group-hover:text-gray-600 transition-colors">
-                            {title}
-                          </h3>
-                          <p className="text-gray-600">
-                            Transforming complex challenges into elegant solutions
-                          </p>
-                        </div>
-                      </motion.div>
-                    </Link>
-                  </motion.div>
-                )
-              )}
+              {caseStudies.map((study, index) => (
+                <motion.div
+                  key={study.id}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-50px' }}
+                  transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <Link to={`/work/${study.id}`} className="h-full">
+                    <motion.div
+                      className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-gray-300 transition-colors group h-full flex flex-col"
+                      whileHover={{ y: -4 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div className="aspect-[4/3] bg-gray-100 overflow-hidden flex-shrink-0">
+                        <ImageWithFallback
+                          src={study.thumbnail}
+                          alt={study.title}
+                          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                      <div className="p-6 flex-grow flex flex-col">
+                        <h3 className="text-xl mb-2 text-gray-900 group-hover:text-gray-600 transition-colors">
+                          {study.title}
+                        </h3>
+                        <p className="text-gray-600 flex-grow">
+                          {study.valueStatement}
+                        </p>
+                      </div>
+                    </motion.div>
+                  </Link>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </div>

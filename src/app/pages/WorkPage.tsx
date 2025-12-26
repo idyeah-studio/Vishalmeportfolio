@@ -5,8 +5,8 @@ import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
 export function WorkPage() {
   return (
-    <div className="pt-32 pb-24 px-6 lg:px-12 min-h-screen">
-      <div className="max-w-7xl mx-auto">
+    <div className="pt-32 pb-24 min-h-screen">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -31,19 +31,19 @@ export function WorkPage() {
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.8, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
             >
-              <Link to={`/work/${study.id}`}>
+              <Link to={`/work/${study.id}`} className="block h-full">
                 <motion.article
-                  className="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-gray-300 transition-all"
+                  className="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-gray-300 transition-all h-full"
                   whileHover={{ y: -8 }}
                   transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  <div className="grid lg:grid-cols-2 gap-8">
+                  <div className="grid lg:grid-cols-2 gap-8 h-full">
                     {/* Image */}
-                    <div className="relative aspect-[16/10] lg:aspect-auto overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                    <div className="relative aspect-[16/10] lg:aspect-[4/3] overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
                       <ImageWithFallback
                         src={study.thumbnail}
                         alt={study.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                       />
                       {study.isAIEnhanced && (
                         <div className="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full border border-gray-200">

@@ -22,8 +22,8 @@ export function CaseStudyPage() {
   }
 
   return (
-    <div className="pt-32 pb-24 px-6 lg:px-12 min-h-screen">
-      <div className="max-w-5xl mx-auto">
+    <div className="pt-32 pb-24 min-h-screen">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Back Button */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -57,20 +57,23 @@ export function CaseStudyPage() {
           <h1 className="text-5xl lg:text-6xl mb-6 text-gray-900">{study.title}</h1>
           <p className="text-2xl text-gray-600 leading-relaxed">{study.impactStatement}</p>
         </motion.div>
+      </div>
 
-        {/* Hero Image */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-24 rounded-2xl overflow-hidden"
-        >
-          <ImageWithFallback
-            src={study.hero}
-            alt={study.title}
-            className="w-full aspect-[21/9] object-cover"
-          />
-        </motion.div>
+      {/* Hero Image - Full Width */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+        className="mb-24 w-full"
+      >
+        <ImageWithFallback
+          src={study.hero}
+          alt={study.title}
+          className="w-full h-auto object-cover"
+        />
+      </motion.div>
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
 
         {/* Project Details */}
         <motion.section
@@ -151,6 +154,30 @@ export function CaseStudyPage() {
             <p className="text-xl text-gray-700 leading-relaxed">{study.impact.results}</p>
           </div>
         </Section>
+
+        {/* Additional Screenshots */}
+        {study.screenshots && study.screenshots.length > 0 && (
+          <Section title="Project Screenshots" delay={0.55}>
+            <div className="space-y-8">
+              {study.screenshots.map((screenshot, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-50px' }}
+                  transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                  className="w-full"
+                >
+                  <ImageWithFallback
+                    src={screenshot}
+                    alt={`${study.title} - Screenshot ${index + 1}`}
+                    className="w-full h-auto object-contain rounded-xl shadow-lg"
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </Section>
+        )}
 
         {/* Reflection */}
         <Section title="Reflection & Learnings" delay={0.6}>

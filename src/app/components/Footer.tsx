@@ -1,13 +1,13 @@
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Feather, Linkedin, Mail } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Mail, href: 'mailto:vishal@example.com', label: 'Email' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
+    { icon: Mail, href: 'mailto:vishal@idyeah.studio', label: 'Email' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/vishalme', label: 'LinkedIn' },
+    { icon: Feather, href: 'https://www.medium.com/@vishalme', label: 'Medium' },
   ];
 
   return (

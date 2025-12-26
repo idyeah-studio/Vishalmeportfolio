@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Mail, Linkedin, Github, Send } from 'lucide-react';
+import { Mail, Linkedin, Feather, Send } from 'lucide-react';
 import { useState } from 'react';
 
 export function ContactPage() {
@@ -27,26 +27,26 @@ export function ContactPage() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'vishal@example.com',
-      href: 'mailto:vishal@example.com'
+      value: 'vishal@idyeah.studio',
+      href: 'mailto:vishal@idyeah.studio'
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      value: 'linkedin.com/in/vishalmehta',
-      href: 'https://linkedin.com'
+      value: 'linkedin.com/in/vishalme',
+      href: 'https://www.linkedin.com/in/vishalme'
     },
     {
-      icon: Github,
-      label: 'GitHub',
-      value: 'github.com/vishalmehta',
-      href: 'https://github.com'
+      icon: Feather,
+      label: 'Medium',
+      value: 'medium.com/@vishalme',
+      href: 'https://www.medium.com/@vishalme'
     }
   ];
 
   return (
-    <div className="pt-32 pb-24 px-6 lg:px-12 min-h-screen">
-      <div className="max-w-5xl mx-auto">
+    <div className="pt-32 pb-24 min-h-screen">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -8,27 +8,30 @@ export function AboutPage() {
       icon: Award,
       title: 'Industry Recognition',
       items: [
-        'Judged at UXDA Design Awards 2024',
-        'Speaker at Design Systems Summit 2023',
-        'Featured in UX Collective Top Articles'
+        'Senior Member, IEEE',
+        'Member, ACM, SIGCHI, UXPA',
+        'Judge at TreeHacks (Stanford), CalHacks 11.0, ICXA 2024',
+        'Reviewer for IEEE EDUCON 2025, IndiaHCI 2024, ICAD 2024'
       ]
     },
     {
       icon: BookOpen,
       title: 'Publications & Thought Leadership',
       items: [
-        '"AI in Design Systems" - Medium (10K+ views)',
-        '"The Future of UX: AI-Augmented Workflows" - Smashing Magazine',
-        'Regular contributor to design publications'
+        '200+ articles on UX, accessibility, and design',
+        'Published in UX Matters, DevOps, Bootcamp, Medium',
+        'Co-authored ACM paper with 56+ citations',
+        'Multiple book chapters on AI and HCI (Springer, Bentham Science)'
       ]
     },
     {
       icon: Users,
-      title: 'Leadership & Contributions',
+      title: 'Leadership & Impact',
       items: [
-        'Led design transformation at 3 Fortune 500 companies',
-        'Mentored 20+ junior designers to senior positions',
-        'Built and scaled design teams from 2 to 15 members'
+        '24+ years driving enterprise UX transformation',
+        'Led AI-powered design systems at Walmart and Apple',
+        'Speaker at World Usability Congress 2025, APCHI 2013',
+        'Mentored teams and conducted international workshops'
       ]
     }
   ];
@@ -36,21 +39,21 @@ export function AboutPage() {
   const values = [
     {
       title: 'Human-Centered AI',
-      description: 'AI should augment human creativity, not replace it. I design tools that amplify designer capabilities while maintaining human judgment at the core.'
+      description: 'By combining AI innovation with ethical HCI practices, I accelerate product development, improve user engagement, and create globally scalable solutions that prioritize fairness and empower users.'
     },
     {
-      title: 'Systematic Thinking',
-      description: 'Great design comes from great systems. I believe in building scalable design languages that empower teams to create consistent, high-quality experiences.'
+      title: 'Enterprise UX Excellence',
+      description: 'I specialize in building scalable, accessible design systems for complex enterprise applications—transforming fragmented experiences into cohesive, data-driven solutions that drive measurable business impact.'
     },
     {
-      title: 'Continuous Learning',
-      description: 'The design field evolves rapidly. I stay at the forefront by embracing new tools, methodologies, and perspectives through continuous exploration.'
+      title: 'Thought Leadership & Mentorship',
+      description: 'Through 200+ published articles, international speaking engagements, and hands-on mentorship, I share knowledge that advances the UX community and empowers the next generation of design leaders.'
     }
   ];
 
   return (
-    <div className="pt-32 pb-24 px-6 lg:px-12 min-h-screen">
-      <div className="max-w-5xl mx-auto">
+    <div className="pt-32 pb-24 min-h-screen">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -60,7 +63,7 @@ export function AboutPage() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-full border border-gray-200 mb-6">
             <Sparkles className="w-4 h-4 text-gray-600" />
-            <span className="text-sm text-gray-600">Design Leader & AI-Native Creator</span>
+            <span className="text-sm text-gray-600">Human-Centered AI Innovator | HCI Specialist | Enterprise UX Leader</span>
           </div>
           
           <h1 className="text-5xl lg:text-6xl mb-6 text-gray-900">About Me</h1>
@@ -75,24 +78,29 @@ export function AboutPage() {
         >
           <div className="order-2 md:order-1">
             <h2 className="text-3xl mb-6 text-gray-900">
-              Design Leader. Product Thinker. AI-Native Creator.
+              Visionary UX Leader, HCI Specialist, and AI-Driven Design Systems Architect
             </h2>
             <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
               <p>
-                With over a decade of experience in UX design and product strategy, I've had the
-                privilege of working with leading technology companies to transform complex
-                challenges into elegant, user-centered solutions.
+                With over 24 years of experience advancing enterprise UX, human-centered AI solutions, 
+                and accessibility, I'm recognized globally as a Judge & Scholarly Reviewer for prestigious 
+                design competitions, Senior IEEE Member, and thought leader in creating transformative, 
+                scalable UX frameworks that bridge AI innovation with human-computer interaction (HCI) principles.
               </p>
               <p>
-                My journey in design has evolved alongside the industry itself—from the early days
-                of mobile-first design to the current era of AI-augmented workflows. I believe
-                that the best design happens at the intersection of human insight and intelligent
-                automation.
+                Throughout my career, I've delivered enterprise-grade design systems and solutions for 
+                global organizations including Apple, Walmart, Intuitive Surgical, and others. I led the 
+                AI-powered DV Design System for Walmart Data Ventures, introducing accessible, generative 
+                AI-driven color palettes and documentation processes that enabled record product launches. 
+                At Apple Pay, I enhanced collaborative engineering platforms, streamlining workflows and 
+                integrating human-first UX principles into legacy systems.
               </p>
               <p>
-                Today, I focus on building design systems and product experiences that scale
-                across global organizations, while pioneering new approaches that leverage AI to
-                amplify creative potential rather than replace it.
+                A passionate advocate for accessibility and inclusivity, I've mentored diverse teams, 
+                conducted international workshops on AI, HCI, and data visualization, and authored over 
+                200 thought leadership articles. My approach integrates AI-powered tools with creative 
+                problem-solving to foster systems that empower users, prioritize fairness, and transform 
+                user experiences globally.
               </p>
             </div>
           </div>
@@ -104,7 +112,7 @@ export function AboutPage() {
               className="relative rounded-2xl overflow-hidden shadow-2xl"
             >
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1740223544743-2aac7fb644c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMGRlc2lnbmVyfGVufDF8fHx8MTc2NjM1Mjc0NHww&ixlib=rb-4.1.0&q=80&w=1080"
+                src="/Vishalmeportfolio/images/profile.jpg"
                 alt="Vishal Mehta"
                 className="w-full aspect-[3/4] object-cover"
               />
@@ -188,17 +196,19 @@ export function AboutPage() {
           <h2 className="text-3xl mb-12 text-gray-900">Expertise</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-xl mb-4 text-gray-900">Design & Strategy</h3>
+              <h3 className="text-xl mb-4 text-gray-900">Core Expertise</h3>
               <div className="flex flex-wrap gap-2">
                 {[
-                  'UX Design',
-                  'Product Strategy',
+                  'Enterprise UX',
                   'Design Systems',
+                  'Human-Computer Interaction',
                   'User Research',
-                  'Information Architecture',
-                  'Interaction Design',
+                  'Accessibility (WCAG)',
+                  'Data Visualization',
                   'Usability Testing',
-                  'Design Leadership'
+                  'Design Leadership',
+                  'Product Strategy',
+                  'Design Thinking'
                 ].map((skill) => (
                   <span
                     key={skill}
@@ -210,17 +220,19 @@ export function AboutPage() {
               </div>
             </div>
             <div>
-              <h3 className="text-xl mb-4 text-gray-900">AI & Technology</h3>
+              <h3 className="text-xl mb-4 text-gray-900">AI & Tools</h3>
               <div className="flex flex-wrap gap-2">
                 {[
-                  'AI-Augmented Design',
-                  'Prompt Engineering',
-                  'Design Automation',
+                  'AI-Driven Design',
+                  'Generative AI (ChatGPT, Midjourney)',
                   'Machine Learning UX',
+                  'AI Automation',
                   'Figma/FigJam',
                   'Design Tokens',
                   'React/TypeScript',
-                  'Prototyping Tools'
+                  'SAP/ERP UX',
+                  'Prototyping',
+                  'User Testing Tools'
                 ].map((skill) => (
                   <span
                     key={skill}

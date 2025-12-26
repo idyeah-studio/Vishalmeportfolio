@@ -25,9 +25,13 @@ export function Navigation() {
             <motion.div
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
+              className="flex items-baseline gap-0"
             >
               <span className="text-2xl font-semibold tracking-tight text-gray-900">
-                Vishal Mehta
+                Vishal
+              </span>
+              <span className="text-2xl font-light tracking-tight text-gray-400">
+                .Design
               </span>
             </motion.div>
           </Link>
