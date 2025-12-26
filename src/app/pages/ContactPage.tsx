@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Mail, Linkedin, Feather, Send } from 'lucide-react';
+import { Mail, Linkedin, Send } from 'lucide-react';
 import { useState } from 'react';
 
 export function ContactPage() {
@@ -28,19 +28,22 @@ export function ContactPage() {
       icon: Mail,
       label: 'Email',
       value: 'vishal@idyeah.studio',
-      href: 'mailto:vishal@idyeah.studio'
+      href: 'mailto:vishal@idyeah.studio',
+      type: 'icon' as const
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
       value: 'linkedin.com/in/vishalme',
-      href: 'https://www.linkedin.com/in/vishalme'
+      href: 'https://www.linkedin.com/in/vishalme',
+      type: 'icon' as const
     },
     {
-      icon: Feather,
+      iconSrc: '/images/icons/medium.png',
       label: 'Medium',
       value: 'medium.com/@vishalme',
-      href: 'https://www.medium.com/@vishalme'
+      href: 'https://www.medium.com/@vishalme',
+      type: 'image' as const
     }
   ];
 
@@ -72,30 +75,31 @@ export function ContactPage() {
             <div>
               <h2 className="text-2xl mb-6 text-gray-900">Get in Touch</h2>
               <div className="space-y-4">
-                {contactMethods.map((method, index) => {
-                  const Icon = method.icon;
-                  return (
-                    <motion.a
-                      key={method.label}
-                      href={method.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.6, delay: 0.2 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                      className="flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-gray-300 hover:bg-gray-50 transition-all group"
-                      whileHover={{ x: 4 }}
-                    >
-                      <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-gray-200 transition-colors">
-                        <Icon className="w-6 h-6 text-gray-700" />
-                      </div>
-                      <div>
-                        <h3 className="text-sm text-gray-500 mb-1">{method.label}</h3>
-                        <p className="text-gray-900">{method.value}</p>
-                      </div>
-                    </motion.a>
-                  );
-                })}
+                {contactMethods.map((method, index) => (
+                  <motion.a
+                    key={method.label}
+                    href={method.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                    className="flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-gray-300 hover:bg-gray-50 transition-all group"
+                    whileHover={{ x: 4 }}
+                  >
+                    <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-gray-200 transition-colors">
+                      {method.type === 'icon' && method.icon ? (
+                        <method.icon className="w-6 h-6 text-gray-700" />
+                      ) : (
+                        <img src={method.iconSrc} alt={method.label} className="w-6 h-6" />
+                      )}
+                    </div>
+                    <div>
+                      <h3 className="text-sm text-gray-500 mb-1">{method.label}</h3>
+                      <p className="text-gray-900">{method.value}</p>
+                    </div>
+                  </motion.a>
+                ))}
               </div>
             </div>
 
